@@ -3,6 +3,9 @@
 * Core Concepts
 <pre>
 
+$ export do='dry-run=client -o yaml'
+$ kubectl run pod --image name -- command ( --rm -it )
+$ k run busybox2 --image busybox --rm -it
 $ alias k='kubectl'
 $ alias w='watch kubectl'
 $ use 'kubectl run nginx --image=image --port=80' instead of 'kubectl run nginx --image=nginx'  ( don't forget  containerPort && containerPort means target-port)
