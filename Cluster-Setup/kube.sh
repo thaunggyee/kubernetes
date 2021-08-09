@@ -16,3 +16,8 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.
 apt update && apt install -y kubeadm=1.18.5-00 kubelet=1.18.5-00 kubectl=1.18.5-00
 }
 
+kubelet error cgroup disable -->
+
+sed -i "s/cgroupDriver: systemd/cgroupDriver: cgroupfs/g" /var/lib/kubelet/config.yaml
+systemctl daemon-reload
+systemctl restart kubelet
