@@ -4,13 +4,14 @@
 <pre>
 
 $ export do='dry-run=client -o yaml'
-$ kubectl run pod --image name -- command ( --rm -it )
+$ kubectl run pod --image name -- ls  ( --rm -it )
 $ k run busybox2 --image busybox --rm -it
 $ yaml file pod --> commnad: ["/bin/bash"] args: ["-c", "echo helloworld"]
 $ k run nginx --image nginx --env name=mmsp &&&&& yaml --> env 
+$ k get pod nginx demo ( get 2 pods)
 $ k get pods -o=jsonpath="{.items[*]['metadata.name' , 'metadata.namespace']}" (jason path nae pya tr ... pods yk name nae namespace ko pl pya tr) items[*] --all pods, items[0] --> first pod
 $ k  get po nginx -o jsonpath='{.spec.containers[].image}' ( image version)
-
+$  k set image pod/deployment nginx=nginx:alpine
 $ k run demo --image ubuntu -- /bin/bash -c 'echo helloworld'
 $ pod --> restartPolicy && imagePullPolicy
 $ alias k='kubectl'
