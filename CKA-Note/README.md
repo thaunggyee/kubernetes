@@ -6,6 +6,13 @@
 $ export do='dry-run=client -o yaml'
 $ kubectl run pod --image name -- command ( --rm -it )
 $ k run busybox2 --image busybox --rm -it
+$ yaml file pod --> commnad: ["/bin/bash"] args: ["-c", "echo helloworld"]
+$ k run nginx --image nginx --env name=mmsp &&&&& yaml --> env 
+$ k get pods -o=jsonpath="{.items[*]['metadata.name' , 'metadata.namespace']}" (jason path nae pya tr ... pods yk name nae namespace ko pl pya tr) items[*] --all pods, items[0] --> first pod
+$ k  get po nginx -o jsonpath='{.spec.containers[].image}' ( image version)
+
+$ k run demo --image ubuntu -- /bin/bash -c 'echo helloworld'
+$ pod --> restartPolicy && imagePullPolicy
 $ alias k='kubectl'
 $ alias w='watch kubectl'
 $ use 'kubectl run nginx --image=image --port=80' instead of 'kubectl run nginx --image=nginx'  ( don't forget  containerPort && containerPort means target-port)
