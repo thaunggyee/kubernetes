@@ -1,5 +1,40 @@
 # CKA-Note For Exam
 
+exam tips
+
+- name ဆိုရင် -o name (or) -o jsonpath='{.contexts}
+- master mhr schedule so yin toleration use ( nodeSelector + toleration )
+- master nodes usually have a taint defined
+- record ( --record )
+- hostpath ( can also create without sc )
+- kubectl top pod --containers=true
+- role can also create secrets and cm
+- role ka single namespace ( clusterrole mhr ka namespace ma lo woo .. it means for any ns )
+- daemonset on all nodes so master pr pr tal ---> so use toleration to create pod on mastter ( ****)
+-     env:                                                                          # add
+      - name: MY_NODE_NAME                                                          # add
+        valueFrom:                                                                  # add
+          fieldRef:                                                                 # add
+            fieldPath: spec.nodeName 
+
+ nodeAffinity - ( node selector ) လို
+ 
+ PodAnffinity vs PodAntiAffinitiy 
+ 
+ - PodAff က အဲ့ label နဲ့ run နေတဲ့ pods တစ်ခုအနည်းဆုံးရှိတဲ့ node ပေါ်မှာ run တာ --> topology key ရှိတဲ့ node ပေါ်မှာ run နိုင်  
+ - PodAntiAff က အဲ့ label နဲ့ run  နေတဲ့ pods မရှိတဲ့  node မှာ run ----> topolgy ကိုထည့်မစဥ်းစားချင်ရင် kubernets.io/hostname အမြဲထား လိုက် ဒါဆိုသူက label နဲ့ pod run မထားတဲ့ node တွေမှာ schedule ) - topology key ကို node အားလုံးမှာမရှိတာထားလိုက်ရင် node အကုန် schedule သွားလုပ်လို့ရသွားတယ် replicas သတ်မှတ်ထားသလောက်
+
+- a volume which can't persist ---> emptydir
+- kubeadm cluster မှာ service CIDR က master node --> /etc/kubernetes/manifests/kube-api.yaml
+- cni plugin path -->  /etc/cni/net.d
+- -cluster1-worker1 ( static-pod suffix --> -nodename )
+- --sort-by=.metadata.creationTimestamp
+- kubectl api-resources --namespaced -o name
+- 
+
+
+
+
 * Core Concepts
 <pre>
 
