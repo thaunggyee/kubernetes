@@ -30,7 +30,8 @@ exam tips
 - -cluster1-worker1 ( static-pod suffix --> -nodename )
 - --sort-by=.metadata.creationTimestamp
 - kubectl api-resources --namespaced -o name
-- 
+-  openssl x509  -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep ( kubelet cert detail )
+-  
 
 
 
